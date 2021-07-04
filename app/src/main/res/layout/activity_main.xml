@@ -49,7 +49,7 @@
             app:layout_constraintBottom_toTopOf="@+id/btPokemonList" app:layout_constraintVertical_chainStyle="packed"/>
     <TextView
             android:gravity="center"
-            android:textColor="#FFF"
+            android:textColor="#000"
             android:text="TRABALHO PARA DISCIPLINA DE MOBILE DO CURSO DE FULLSTACK FIAP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
