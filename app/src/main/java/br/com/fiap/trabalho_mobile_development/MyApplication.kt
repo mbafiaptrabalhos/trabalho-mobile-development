@@ -11,8 +11,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 
-class MainActivity : Application() {
-
+class MyApplication : Application(){
     override fun onCreate() {
         super.onCreate()
 
@@ -22,7 +21,7 @@ class MainActivity : Application() {
         // Start Koin
         startKoin {
             androidLogger()
-            androidContext(this@MainActivity)
+            androidContext(this@MyApplication)
             modules(
                 listOf(
                     viewModelModule,
@@ -32,5 +31,4 @@ class MainActivity : Application() {
             )
         }
     }
-
 }

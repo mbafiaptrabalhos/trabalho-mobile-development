@@ -12,7 +12,7 @@ class PokemonRepositoryImpl(val pokemonService: PokemonService) : PokemonReposit
     override fun getPokemons(
         offset: Int,
         limit: Int,
-        onComplete: (List<Pokemon>?) -> Unit,
+        onComplete: (PokemonResponse?) -> Unit,
         onError: (Throwable?) -> Unit
     ) {
         pokemonService.getPokemons(offset, limit)
@@ -26,13 +26,12 @@ class PokemonRepositoryImpl(val pokemonService: PokemonService) : PokemonReposit
                     Response<PokemonResponse>
                 ) {
                     if (response.isSuccessful) {
-                        onComplete(response.body()?.content)
+                        onComplete(response.body())
                     } else {
                         onError(Throwable("Não foi possível carregar os Pokémons"))
                     }
                 }
             })
-
     }
 
     override fun getPokemonsById(

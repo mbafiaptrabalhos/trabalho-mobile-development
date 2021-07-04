@@ -4,11 +4,11 @@ import android.content.Context
 import br.com.fiap.trabalho_mobile_development.api.PokemonService
 import br.com.fiap.trabalho_mobile_development.repository.PokemonRepository
 import br.com.fiap.trabalho_mobile_development.repository.PokemonRepositoryImpl
-import br.com.fiap.trabalho_mobile_development.view.ListPokemonsViewModel
+import br.com.fiap.trabalho_mobile_development.view.form.FormPokemonViewModel
+import br.com.fiap.trabalho_mobile_development.view.list.ListPokemonsViewModel
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -17,7 +17,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 val viewModelModule = module {
-    viewModel { ListPokemonsViewModel(get()) }
+    viewModel {
+        ListPokemonsViewModel(
+            get()
+        )}
+        viewModel { FormPokemonViewModel(get()) }
+
 }
 
 val repositoryModule = module {
